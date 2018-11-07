@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import lombok.val;
 import work.tomosse.entity.Score;
 import work.tomosse.service.ScoreService;
 
@@ -29,8 +28,7 @@ public class ScoreController {
      */
     @GetMapping
     public List<Score> index(@ModelAttribute Score score) {
-        val scores = scoreService.findAll();
-        return scores;
+        return scoreService.findAll();
     }
 
     /**
