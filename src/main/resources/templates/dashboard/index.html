@@ -6,5 +6,15 @@
 </head>
 <body>
   <h1>Tky Brothers Score Server!!</h1>
+  <table border="1">
+    <tr>
+      <th>id</th>
+      <th>Score</th>
+    </tr>
+    <tr th:each="score : ${scores}">
+      <td th:text="${score.id}"></td>
+      <td th:text="${score.point}"></td>
+    </tr>
+  </table>
 </body>
 </html>
