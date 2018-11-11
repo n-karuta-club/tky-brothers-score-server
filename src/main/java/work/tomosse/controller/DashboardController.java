@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import lombok.val;
-import work.tomosse.repository.ScoreRepository;
+import work.tomosse.service.ScoreService;
 
 @Controller
 @RequestMapping("/")
 public class DashboardController {
     @Autowired
-    private ScoreRepository scoreRepository;
+    private ScoreService scoreService;
 
     /**
      * GET /
@@ -23,7 +23,7 @@ public class DashboardController {
      */
     @GetMapping
     public ModelAndView index(ModelAndView mav) {
-        val scores = scoreRepository.findAll();
+        val scores = scoreService.findAll();
         mav.addObject("scores", scores);
         mav.setViewName("dashboard/index");
         return mav;
