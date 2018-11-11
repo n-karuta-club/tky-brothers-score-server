@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +16,7 @@ import work.tomosse.entity.Score;
 import work.tomosse.service.ScoreService;
 
 @RestController
-@RequestMapping("/api/score/")
+@RequestMapping("/api/score")
 public class ScoreController {
     @Autowired
     private ScoreService scoreService;
@@ -38,7 +39,7 @@ public class ScoreController {
      * @return
      */
     @PostMapping
-    public Score create(@RequestBody @Validated Score score) {
-        return scoreService.save(score);
+    public Score create(@RequestBody @Validated Score score, @RequestHeader("token") String token) {
+        return scoreService.save(score, token);
     }
 }
