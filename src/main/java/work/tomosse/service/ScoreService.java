@@ -18,10 +18,22 @@ public class ScoreService {
     @Autowired
     private ScoreUtil scoreUtil;
 
+    /**
+     * スコアを降順に全件取得
+     *
+     * @return
+     */
     public List<Score> findAll() {
         return scoreRepository.findAll(new Sort(Sort.Direction.DESC, "point"));
     }
 
+    /**
+     * スコアを登録
+     *
+     * @param score
+     * @param token
+     * @return
+     */
     public Score save(Score score, String token) {
         System.out.println(scoreUtil.isMatch(score, token));
         if (scoreUtil.isMatch(score, token)) {
