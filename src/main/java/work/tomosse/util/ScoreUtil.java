@@ -31,8 +31,6 @@ public class ScoreUtil {
      * @return
      */
     public boolean isMatch(Score score, String token) {
-        System.out.println(hashMd5(String.valueOf(score.getPoint())));
-        System.out.println(token);
         return token.equals(hashMd5(String.valueOf(score.getPoint())));
     }
 }

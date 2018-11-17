@@ -35,7 +35,6 @@ public class ScoreService {
      * @return
      */
     public Score save(Score score, String token) {
-        System.out.println(scoreUtil.isMatch(score, token));
         if (scoreUtil.isMatch(score, token)) {
             return scoreRepository.save(score);
         }

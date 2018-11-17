@@ -23,6 +23,12 @@ repositories {
   mavenCentral()
 }
 
+jar  {
+  enabled = true;
+  baseName = 'tky-brothers'
+  version = '0.1'
+}
+
 
 dependencies {
   implementation('org.springframework.boot:spring-boot-starter-data-jpa')
@@ -32,4 +38,5 @@ dependencies {
   runtimeOnly('org.postgresql:postgresql')
   compileOnly('org.projectlombok:lombok')
   testImplementation('org.springframework.boot:spring-boot-starter-test')
+  compile('com.h2database:h2')
 }
