@@ -22,3 +22,6 @@ PostgreSQLに切り替えたい場合は、`src/main/resources/application.prope
 |GET: /|スコアボードの表示|
 |GET: /api/score|スコアの提供|
 |POST: /api/score|スコアの登録|
+
+## 参考書籍
+- Spring Boot 2 プログラミング入門 [著者] 斉藤 和邦
